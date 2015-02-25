@@ -1,0 +1,17 @@
+c:\users\ivanp_000\documents\visual studio 2013\Projects\AssignmentGUI\AssignmentGUI\bin\Debug\AssignmentGUI.exe.config
+c:\users\ivanp_000\documents\visual studio 2013\Projects\AssignmentGUI\AssignmentGUI\bin\Debug\AssignmentGUI.exe
+c:\users\ivanp_000\documents\visual studio 2013\Projects\AssignmentGUI\AssignmentGUI\bin\Debug\AssignmentGUI.pdb
+c:\users\ivanp_000\documents\visual studio 2013\Projects\AssignmentGUI\AssignmentGUI\obj\Debug\AssignmentGUI.csprojResolveAssemblyReference.cache
+c:\users\ivanp_000\documents\visual studio 2013\Projects\AssignmentGUI\AssignmentGUI\obj\Debug\AssignmentGUI.Properties.Resources.resources
+c:\users\ivanp_000\documents\visual studio 2013\Projects\AssignmentGUI\AssignmentGUI\obj\Debug\AssignmentGUI.csproj.GenerateResource.Cache
+c:\users\ivanp_000\documents\visual studio 2013\Projects\AssignmentGUI\AssignmentGUI\obj\Debug\AssignmentGUI.exe
+c:\users\ivanp_000\documents\visual studio 2013\Projects\AssignmentGUI\AssignmentGUI\obj\Debug\AssignmentGUI.pdb
+C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\bin\Debug\AssignmentGUI.exe.config
+C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.exe
+C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.pdb
+C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\bin\Debug\AssignmentGUI.exe
+C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\bin\Debug\AssignmentGUI.pdb
+C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.csprojResolveAssemblyReference.cache
+C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.Form1.resources
+C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.Properties.Resources.resources
+C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.csproj.GenerateResource.Cache

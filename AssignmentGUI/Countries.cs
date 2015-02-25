@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-class Countries
+﻿class Countries
 {
     private string name;
     private double gdpGrowth;

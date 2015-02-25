@@ -6,7 +6,7 @@ class Countries
     private double inflation;
     private double tradeBalance;
     private int hdiRank;
-    private string[] tradePartners = new string[5];
+    private string tradePartners;
 
     public string Name
     {
@@ -38,7 +38,7 @@ class Countries
         set { hdiRank = value; }
     }
 
-    public string[] TradePartners
+    public string TradePartners
     {
         get { return tradePartners; }
         set { tradePartners = value; }

@@ -30,24 +30,10 @@ namespace fileReadExample
                 }
                 else
                 {
-                    int index = 0;
-
-                    //split	data	using	commas
                     string[] columns = line.Split(',');
                     countries.Add(new Countries { Name = columns[0], GdpGrowth = Convert.ToDouble(columns[1]), 
                         Inflation = Convert.ToDouble(columns[2]), TradeBalance = Convert.ToDouble(columns[3]), 
-                        HdiRank = Int32.Parse(columns[4]), TradePartners = null });
-
-                    string[] partners = columns[5].Split(';', '[', ']');
-                    foreach (string tradePartner in partners)
-                    {
-                        if (tradePartner != "")
-                        {
-                            countries[index].TradePartners[0] = new string()
-                            countries[index].TradePartners[0] = "ad";
-                        }
-                    }
-                    index++;
+                        HdiRank = Int32.Parse(columns[4]), TradePartners = columns[5] });
                 }
             }
             Console.ReadKey();

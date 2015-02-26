@@ -7,7 +7,6 @@ class Countries
     private double inflation;
     private double tradeBalance;
     private int hdiRank;
-    private string tradePartners;
     private BindingList<string> tradingPartners = new BindingList<string>();
 
     public string Name

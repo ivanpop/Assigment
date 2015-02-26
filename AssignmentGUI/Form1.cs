@@ -67,13 +67,24 @@ namespace AssignmentGUI
 
         private void updateView()
         {
-            gdpSelected.Text = countries[listBox1.SelectedIndex].GdpGrowth.ToString();
-            inflationSelected.Text = countries[listBox1.SelectedIndex].Inflation.ToString();
-            tradeSelected.Text = countries[listBox1.SelectedIndex].TradeBalance.ToString();
-            hdiSelected.Text = countries[listBox1.SelectedIndex].HdiRank.ToString();
+            gdpBox.Text = countries[listBox1.SelectedIndex].GdpGrowth.ToString();
+            inflationBox.Text = countries[listBox1.SelectedIndex].Inflation.ToString();
+            tradeBalanceBox.Text = countries[listBox1.SelectedIndex].TradeBalance.ToString();
+            hdiBox.Text = countries[listBox1.SelectedIndex].HdiRank.ToString();
             listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
         }
 
-        
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            countries[listBox1.SelectedIndex].GdpGrowth = Convert.ToDouble(gdpBox.Text);
+            countries[listBox1.SelectedIndex].Inflation = Convert.ToDouble(inflationBox.Text);
+            countries[listBox1.SelectedIndex].TradeBalance = Convert.ToDouble(tradeBalanceBox.Text);
+            countries[listBox1.SelectedIndex].HdiRank = Convert.ToInt32(hdiBox.Text);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

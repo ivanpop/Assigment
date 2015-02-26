@@ -46,13 +46,16 @@ namespace AssignmentGUI
                     });
                 }
             }
+            resortList();
+        }
+
+        private void resortList()
+        {
+            List<Countries> sortedList = countries.OrderBy(x => x.Name).ToList();
+            countries = new BindingList<Countries>(sortedList);
 
             listBox1.DataSource = countries;
-            listBox1.ValueMember = "Name";
             listBox1.DisplayMember = "Name";
-
-            this.listBox1.DataBindings.Add("Name", countries, "Name", true,
-                DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void removeBtn_Click(object sender, EventArgs e)
@@ -104,7 +107,8 @@ namespace AssignmentGUI
                     TradePartners = "[none]"
                 });
 
-                Program.newCountryName = null;            
+                Program.newCountryName = null;
+                resortList();
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -82,9 +83,29 @@ namespace AssignmentGUI
             countries[listBox1.SelectedIndex].HdiRank = Convert.ToInt32(hdiBox.Text);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void addBtn_Click(object sender, EventArgs e)
         {
+            AddCountry cf = new AddCountry();
+            cf.FormClosed += new FormClosedEventHandler(cfClosed);
+            cf.Show();
+        }
 
+        void cfClosed(object sender, FormClosedEventArgs e)
+        {
+            if(Program.newCountryName != "")
+            {
+                countries.Add(new Countries
+                {
+                    Name = Program.newCountryName,
+                    GdpGrowth = 0,
+                    Inflation = 0,
+                    TradeBalance = 0,
+                    HdiRank = 0,
+                    TradePartners = "[none]"
+                });
+
+                Program.newCountryName = null;            
+            }
         }
     }
 }

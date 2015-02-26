@@ -15,3 +15,4 @@ C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\Assignment
 C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.Form1.resources
 C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.Properties.Resources.resources
 C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.csproj.GenerateResource.Cache
+C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.AddCountry.resources

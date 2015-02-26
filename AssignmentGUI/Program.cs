@@ -9,6 +9,8 @@ namespace AssignmentGUI
 {
     static class Program
     {
+        public static string newCountryName = null;
+
         [STAThread]
         static void Main()
         {

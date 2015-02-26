@@ -195,6 +195,7 @@
             this.addBtn.TabIndex = 18;
             this.addBtn.Text = "Add Country";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // Form1
             // 
@@ -218,7 +219,6 @@
             this.Controls.Add(this.listBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

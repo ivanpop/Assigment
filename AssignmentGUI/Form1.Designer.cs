@@ -38,6 +38,8 @@
             this.inflationSelected = new System.Windows.Forms.Label();
             this.tradeSelected = new System.Windows.Forms.Label();
             this.hdiSelected = new System.Windows.Forms.Label();
+            this.tradePartnersLbl = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // listBox1
@@ -45,7 +47,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(13, 13);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.Size = new System.Drawing.Size(120, 238);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -62,7 +64,7 @@
             // gdpLbl
             // 
             this.gdpLbl.AutoSize = true;
-            this.gdpLbl.Location = new System.Drawing.Point(11, 116);
+            this.gdpLbl.Location = new System.Drawing.Point(283, 17);
             this.gdpLbl.Name = "gdpLbl";
             this.gdpLbl.Size = new System.Drawing.Size(67, 13);
             this.gdpLbl.TabIndex = 2;
@@ -71,7 +73,7 @@
             // inflationLbl
             // 
             this.inflationLbl.AutoSize = true;
-            this.inflationLbl.Location = new System.Drawing.Point(93, 116);
+            this.inflationLbl.Location = new System.Drawing.Point(283, 40);
             this.inflationLbl.Name = "inflationLbl";
             this.inflationLbl.Size = new System.Drawing.Size(44, 13);
             this.inflationLbl.TabIndex = 3;
@@ -80,7 +82,7 @@
             // tradeBalanceLbl
             // 
             this.tradeBalanceLbl.AutoSize = true;
-            this.tradeBalanceLbl.Location = new System.Drawing.Point(154, 116);
+            this.tradeBalanceLbl.Location = new System.Drawing.Point(283, 67);
             this.tradeBalanceLbl.Name = "tradeBalanceLbl";
             this.tradeBalanceLbl.Size = new System.Drawing.Size(77, 13);
             this.tradeBalanceLbl.TabIndex = 4;
@@ -89,7 +91,7 @@
             // hdiRankLbl
             // 
             this.hdiRankLbl.AutoSize = true;
-            this.hdiRankLbl.Location = new System.Drawing.Point(248, 116);
+            this.hdiRankLbl.Location = new System.Drawing.Point(283, 93);
             this.hdiRankLbl.Name = "hdiRankLbl";
             this.hdiRankLbl.Size = new System.Drawing.Size(55, 13);
             this.hdiRankLbl.TabIndex = 5;
@@ -98,7 +100,7 @@
             // gdpSelected
             // 
             this.gdpSelected.AutoSize = true;
-            this.gdpSelected.Location = new System.Drawing.Point(12, 144);
+            this.gdpSelected.Location = new System.Drawing.Point(380, 17);
             this.gdpSelected.Name = "gdpSelected";
             this.gdpSelected.Size = new System.Drawing.Size(35, 13);
             this.gdpSelected.TabIndex = 9;
@@ -107,7 +109,7 @@
             // inflationSelected
             // 
             this.inflationSelected.AutoSize = true;
-            this.inflationSelected.Location = new System.Drawing.Point(93, 144);
+            this.inflationSelected.Location = new System.Drawing.Point(380, 44);
             this.inflationSelected.Name = "inflationSelected";
             this.inflationSelected.Size = new System.Drawing.Size(35, 13);
             this.inflationSelected.TabIndex = 8;
@@ -116,7 +118,7 @@
             // tradeSelected
             // 
             this.tradeSelected.AutoSize = true;
-            this.tradeSelected.Location = new System.Drawing.Point(154, 144);
+            this.tradeSelected.Location = new System.Drawing.Point(380, 70);
             this.tradeSelected.Name = "tradeSelected";
             this.tradeSelected.Size = new System.Drawing.Size(35, 13);
             this.tradeSelected.TabIndex = 7;
@@ -125,17 +127,36 @@
             // hdiSelected
             // 
             this.hdiSelected.AutoSize = true;
-            this.hdiSelected.Location = new System.Drawing.Point(248, 144);
+            this.hdiSelected.Location = new System.Drawing.Point(380, 94);
             this.hdiSelected.Name = "hdiSelected";
             this.hdiSelected.Size = new System.Drawing.Size(35, 13);
             this.hdiSelected.TabIndex = 6;
             this.hdiSelected.Text = "label8";
             // 
+            // tradePartnersLbl
+            // 
+            this.tradePartnersLbl.AutoSize = true;
+            this.tradePartnersLbl.Location = new System.Drawing.Point(283, 119);
+            this.tradePartnersLbl.Name = "tradePartnersLbl";
+            this.tradePartnersLbl.Size = new System.Drawing.Size(76, 13);
+            this.tradePartnersLbl.TabIndex = 10;
+            this.tradePartnersLbl.Text = "Trade partners";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(383, 119);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(95, 69);
+            this.listBox2.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 261);
+            this.ClientSize = new System.Drawing.Size(509, 289);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.tradePartnersLbl);
             this.Controls.Add(this.gdpSelected);
             this.Controls.Add(this.inflationSelected);
             this.Controls.Add(this.tradeSelected);
@@ -165,6 +186,8 @@
         private System.Windows.Forms.Label inflationSelected;
         private System.Windows.Forms.Label tradeSelected;
         private System.Windows.Forms.Label hdiSelected;
+        private System.Windows.Forms.Label tradePartnersLbl;
+        private System.Windows.Forms.ListBox listBox2;
 
     }
 }

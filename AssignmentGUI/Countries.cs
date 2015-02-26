@@ -1,4 +1,6 @@
-﻿class Countries
+﻿using System.ComponentModel;
+using System.Text;
+class Countries
 {
     private string name;
     private double gdpGrowth;
@@ -6,6 +8,7 @@
     private double tradeBalance;
     private int hdiRank;
     private string tradePartners;
+    private BindingList<string> tradingPartners = new BindingList<string>();
 
     public string Name
     {
@@ -39,7 +42,20 @@
 
     public string TradePartners
     {
-        get { return tradePartners; }
-        set { tradePartners = value; }
+        set
+        {
+            StringBuilder sb = new StringBuilder(value);            
+
+            sb.Length--;
+            sb.Remove(0, 1);
+            string[] partners = sb.ToString().Split(';');
+            tradingPartners = new BindingList<string>(partners);            
+        }
     }
+
+    public BindingList<string> TradingPartners
+    {
+        get { return tradingPartners; }
+    }
+    
 }

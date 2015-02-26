@@ -27,7 +27,7 @@ namespace AssignmentGUI
 
             foreach (string line in AllLines)
             {
-                if (line.StartsWith("Country"))	//found	first	line	- headers	
+                if (line.StartsWith("Country"))
                 {
                     headers = line.Split(',');
                 }
@@ -57,11 +57,21 @@ namespace AssignmentGUI
         private void removeBtn_Click(object sender, EventArgs e)
         {
             countries.RemoveAt(listBox1.SelectedIndex);
+            updateView();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            updateView();
+        }
 
+        private void updateView()
+        {
+            gdpSelected.Text = countries[listBox1.SelectedIndex].GdpGrowth.ToString();
+            inflationSelected.Text = countries[listBox1.SelectedIndex].Inflation.ToString();
+            tradeSelected.Text = countries[listBox1.SelectedIndex].TradeBalance.ToString();
+            hdiSelected.Text = countries[listBox1.SelectedIndex].HdiRank.ToString();
+            listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
         }
 
         

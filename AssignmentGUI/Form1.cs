@@ -46,10 +46,10 @@ namespace AssignmentGUI
                     });
                 }
             }
-            resortList();
+            resortListbox1();
         }
 
-        private void resortList()
+        private void resortListbox1()
         {
             List<Countries> sortedList = countries.OrderBy(x => x.Name).ToList();
             countries = new BindingList<Countries>(sortedList);
@@ -108,8 +108,23 @@ namespace AssignmentGUI
                 });
 
                 Program.newCountryName = null;
-                resortList();
+                resortListbox1();
             }
+        }
+
+        private void tradePAddBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tradePRemBtn_Click(object sender, EventArgs e)
+        {
+            if(listBox2.SelectedIndex != -1)
+            {
+                countries[listBox1.SelectedIndex].TradingPartners.RemoveAt(listBox2.SelectedIndex);
+                listBox2.DataSource = null;
+                listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
+            }            
         }
     }
 }

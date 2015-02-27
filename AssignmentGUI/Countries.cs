@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 class Countries
 {
@@ -7,7 +8,7 @@ class Countries
     private double inflation;
     private double tradeBalance;
     private int hdiRank;
-    private BindingList<string> tradingPartners = new BindingList<string>();
+    private List<string> tradingPartners = new List<string>();
 
     public string Name
     {
@@ -48,13 +49,14 @@ class Countries
             sb.Length--;
             sb.Remove(0, 1);
             string[] partners = sb.ToString().Split(';');
-            tradingPartners = new BindingList<string>(partners);            
+            tradingPartners = new List<string>(partners);            
         }
     }
 
-    public BindingList<string> TradingPartners
+    public List<string> TradingPartners
     {
         get { return tradingPartners; }
+        set { }
     }
     
 }

@@ -42,7 +42,7 @@
             this.hdiBox = new System.Windows.Forms.TextBox();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.tradePAddBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tradePRemBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.addBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -166,19 +166,21 @@
             this.tradePAddBtn.TabIndex = 18;
             this.tradePAddBtn.Text = "Add new";
             this.tradePAddBtn.UseVisualStyleBackColor = true;
+            this.tradePAddBtn.Click += new System.EventHandler(this.tradePAddBtn_Click);
             // 
-            // button1
+            // tradePRemBtn
             // 
-            this.button1.Location = new System.Drawing.Point(90, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Remove selected";
-            this.button1.UseVisualStyleBackColor = true;
+            this.tradePRemBtn.Location = new System.Drawing.Point(90, 19);
+            this.tradePRemBtn.Name = "tradePRemBtn";
+            this.tradePRemBtn.Size = new System.Drawing.Size(100, 23);
+            this.tradePRemBtn.TabIndex = 19;
+            this.tradePRemBtn.Text = "Remove selected";
+            this.tradePRemBtn.UseVisualStyleBackColor = true;
+            this.tradePRemBtn.Click += new System.EventHandler(this.tradePRemBtn_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.tradePRemBtn);
             this.groupBox1.Controls.Add(this.tradePAddBtn);
             this.groupBox1.Location = new System.Drawing.Point(126, 223);
             this.groupBox1.Name = "groupBox1";
@@ -241,7 +243,7 @@
         private System.Windows.Forms.TextBox hdiBox;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button tradePAddBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button tradePRemBtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button addBtn;
 

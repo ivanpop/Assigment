@@ -49,14 +49,17 @@ class Countries
             sb.Length--;
             sb.Remove(0, 1);
             string[] partners = sb.ToString().Split(';');
-            tradingPartners = new List<string>(partners);            
+            tradingPartners = new List<string>(partners);
+            tradingPartners.Sort();            
         }
     }
 
     public List<string> TradingPartners
     {
-        get { return tradingPartners; }
-        set { }
+        get 
+        {
+            tradingPartners.Sort();
+            return tradingPartners; 
+        }
     }
-    
 }

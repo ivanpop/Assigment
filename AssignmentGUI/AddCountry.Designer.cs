@@ -80,7 +80,7 @@
             this.Controls.Add(this.newCountryBox);
             this.Controls.Add(this.newCountryLbl);
             this.Name = "AddCountry";
-            this.Text = "AddCountry";
+            this.Text = "Add new country";
             this.ResumeLayout(false);
             this.PerformLayout();
 

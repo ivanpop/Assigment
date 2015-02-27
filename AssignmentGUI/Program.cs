@@ -9,7 +9,7 @@ namespace AssignmentGUI
 {
     static class Program
     {
-        public static string newCountryName = null;
+        public static string newCountryName = null, newPartnerName = null;
 
         [STAThread]
         static void Main()

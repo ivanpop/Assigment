@@ -88,12 +88,12 @@ namespace AssignmentGUI
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            AddCountry cf = new AddCountry();
-            cf.FormClosed += new FormClosedEventHandler(cfClosed);
-            cf.Show();
+            AddCountry ac = new AddCountry();
+            ac.FormClosed += new FormClosedEventHandler(acClosed);
+            ac.Show();
         }
 
-        void cfClosed(object sender, FormClosedEventArgs e)
+        void acClosed(object sender, FormClosedEventArgs e)
         {
             if(Program.newCountryName != "")
             {
@@ -114,7 +114,20 @@ namespace AssignmentGUI
 
         private void tradePAddBtn_Click(object sender, EventArgs e)
         {
+            AddTradingPartner ap = new AddTradingPartner();
+            ap.FormClosed += new FormClosedEventHandler(apClosed);
+            ap.Show();
+        }
 
+        void apClosed(object sender, FormClosedEventArgs e)
+        {
+            if(Program.newPartnerName != "")
+            {
+                countries[listBox1.SelectedIndex].TradingPartners.Add(Program.newPartnerName);
+                Program.newPartnerName = null;
+                listBox2.DataSource = null;
+                listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
+            }
         }
 
         private void tradePRemBtn_Click(object sender, EventArgs e)

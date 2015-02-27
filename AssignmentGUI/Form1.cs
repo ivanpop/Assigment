@@ -56,6 +56,8 @@ namespace AssignmentGUI
 
             listBox1.DataSource = countries;
             listBox1.DisplayMember = "Name";
+            countriesCountLbl.Text = listBox1.Items.Count.ToString();
+            partnersCountLbl.Text = listBox2.Items.Count.ToString();
         }
 
         private void removeBtn_Click(object sender, EventArgs e)
@@ -76,6 +78,8 @@ namespace AssignmentGUI
             tradeBalanceBox.Text = countries[listBox1.SelectedIndex].TradeBalance.ToString();
             hdiBox.Text = countries[listBox1.SelectedIndex].HdiRank.ToString();
             listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
+            countriesCountLbl.Text = listBox1.Items.Count.ToString();
+            partnersCountLbl.Text = listBox2.Items.Count.ToString();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -121,12 +125,13 @@ namespace AssignmentGUI
 
         void apClosed(object sender, FormClosedEventArgs e)
         {
-            if(Program.newPartnerName != "")
+            if(Program.newPartnerName != "" && Program.newPartnerName != null)
             {
                 countries[listBox1.SelectedIndex].TradingPartners.Add(Program.newPartnerName);
                 Program.newPartnerName = null;
                 listBox2.DataSource = null;
                 listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
+                partnersCountLbl.Text = listBox2.Items.Count.ToString();
             }
         }
 
@@ -137,7 +142,13 @@ namespace AssignmentGUI
                 countries[listBox1.SelectedIndex].TradingPartners.RemoveAt(listBox2.SelectedIndex);
                 listBox2.DataSource = null;
                 listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
+                partnersCountLbl.Text = listBox2.Items.Count.ToString();
             }            
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

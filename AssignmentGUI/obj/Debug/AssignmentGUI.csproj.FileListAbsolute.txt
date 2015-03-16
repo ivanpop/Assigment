@@ -17,3 +17,14 @@ C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\Assignment
 C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.csproj.GenerateResource.Cache
 C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.AddCountry.resources
 C:\Users\ivanp_000\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.AddTradingPartner.resources
+E:\Documents\GitHub\Assigment\AssignmentGUI\bin\Debug\AssignmentGUI.exe.config
+E:\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.exe
+E:\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.pdb
+E:\Documents\GitHub\Assigment\AssignmentGUI\bin\Debug\AssignmentGUI.exe
+E:\Documents\GitHub\Assigment\AssignmentGUI\bin\Debug\AssignmentGUI.pdb
+E:\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.csprojResolveAssemblyReference.cache
+E:\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.AddCountry.resources
+E:\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.AddTradingPartner.resources
+E:\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.Form1.resources
+E:\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.Properties.Resources.resources
+E:\Documents\GitHub\Assigment\AssignmentGUI\obj\Debug\AssignmentGUI.csproj.GenerateResource.Cache

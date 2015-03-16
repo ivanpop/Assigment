@@ -15,7 +15,9 @@ namespace AssignmentGUI
     public partial class Form1 : Form
     {
         static string[] headers = new string[6];
-        BindingList<Countries> countries = new BindingList<Countries>();
+        //BindingList<Countries> countries = new BindingList<Countries>();
+        int key = 0;
+        Dictionary<Countries, int> countries = new Dictionary<Countries, int>();
 
         public Form1()
         {
@@ -43,14 +45,22 @@ namespace AssignmentGUI
                         TradeBalance = Convert.ToDouble(columns[3]),
                         HdiRank = Int32.Parse(columns[4]),
                         TradePartners = columns[5]
-                    });
+                    }, key);
+                    key++;
                 }
             }
-            resortListbox1();
+            bindListbox1();
         }
 
-        private void resortListbox1()
+        private void bindListbox1()
         {
+            //var sortedDict = from entry in countries orderby entry.Value ascending select entry;
+            //countries = sortedDict.ToDictionary(pair => pair.Key, pair => pair.Value);
+
+            //listBox1.DataSource = new BindingSource(countries, null);
+            //listBox1.ValueMember = countries[key];
+            
+            /*
             List<Countries> sortedList = countries.OrderBy(x => x.Name).ToList();
             countries = new BindingList<Countries>(sortedList);
 
@@ -58,21 +68,27 @@ namespace AssignmentGUI
             listBox1.DisplayMember = "Name";
             countriesCountLbl.Text = listBox1.Items.Count.ToString();
             partnersCountLbl.Text = listBox2.Items.Count.ToString();
+            */
         }
 
         private void removeBtn_Click(object sender, EventArgs e)
         {
+            /*
             countries.RemoveAt(listBox1.SelectedIndex);
             updateView();
+            */
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*
             updateView();
+             */
         }
 
         private void updateView()
         {
+            /*
             gdpBox.Text = countries[listBox1.SelectedIndex].GdpGrowth.ToString();
             inflationBox.Text = countries[listBox1.SelectedIndex].Inflation.ToString();
             tradeBalanceBox.Text = countries[listBox1.SelectedIndex].TradeBalance.ToString();
@@ -80,25 +96,31 @@ namespace AssignmentGUI
             listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
             countriesCountLbl.Text = listBox1.Items.Count.ToString();
             partnersCountLbl.Text = listBox2.Items.Count.ToString();
+             */
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            /*
             countries[listBox1.SelectedIndex].GdpGrowth = Convert.ToDouble(gdpBox.Text);
             countries[listBox1.SelectedIndex].Inflation = Convert.ToDouble(inflationBox.Text);
             countries[listBox1.SelectedIndex].TradeBalance = Convert.ToDouble(tradeBalanceBox.Text);
             countries[listBox1.SelectedIndex].HdiRank = Convert.ToInt32(hdiBox.Text);
+            */
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
+            /*
             AddCountry ac = new AddCountry();
             ac.FormClosed += new FormClosedEventHandler(acClosed);
             ac.Show();
+            */
         }
 
         void acClosed(object sender, FormClosedEventArgs e)
         {
+            /*
             if(Program.newCountryName != "")
             {
                 countries.Add(new Countries
@@ -114,17 +136,21 @@ namespace AssignmentGUI
                 Program.newCountryName = null;
                 resortListbox1();
             }
+            */
         }
 
         private void tradePAddBtn_Click(object sender, EventArgs e)
         {
+            /*
             AddTradingPartner ap = new AddTradingPartner();
             ap.FormClosed += new FormClosedEventHandler(apClosed);
             ap.Show();
+            */
         }
 
         void apClosed(object sender, FormClosedEventArgs e)
         {
+            /*
             if(Program.newPartnerName != "" && Program.newPartnerName != null)
             {
                 countries[listBox1.SelectedIndex].TradingPartners.Add(Program.newPartnerName);
@@ -133,17 +159,20 @@ namespace AssignmentGUI
                 listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
                 partnersCountLbl.Text = listBox2.Items.Count.ToString();
             }
+            */ 
         }
 
         private void tradePRemBtn_Click(object sender, EventArgs e)
         {
+            /*
             if(listBox2.SelectedIndex != -1)
             {
                 countries[listBox1.SelectedIndex].TradingPartners.RemoveAt(listBox2.SelectedIndex);
                 listBox2.DataSource = null;
                 listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
                 partnersCountLbl.Text = listBox2.Items.Count.ToString();
-            }            
+            }
+            */
         }
 
         private void closeBtn_Click(object sender, EventArgs e)

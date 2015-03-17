@@ -117,7 +117,6 @@ namespace AssignmentGUI
 
         void acClosed(object sender, FormClosedEventArgs e)
         {
-            
             if(Program.newCountryName != "")
             {
                 countries.Add(Program.newCountryName, new Countries
@@ -147,6 +146,8 @@ namespace AssignmentGUI
             {
                 selectedCountry.TradingPartners.Add(Program.newPartnerName);
                 Program.newPartnerName = null;
+                if (countries.ContainsKey(listBox1.SelectedValue.ToString()))
+                    countries[listBox1.SelectedValue.ToString()] = selectedCountry;
                 listBox2.DataSource = null;
                 listBox2.DataSource = selectedCountry.TradingPartners;
                 partnersCountLbl.Text = listBox2.Items.Count.ToString();
@@ -155,15 +156,15 @@ namespace AssignmentGUI
 
         private void tradePRemBtn_Click(object sender, EventArgs e)
         {
-            /*
             if(listBox2.SelectedIndex != -1)
             {
-                countries[listBox1.SelectedIndex].TradingPartners.RemoveAt(listBox2.SelectedIndex);
+                selectedCountry.TradingPartners.RemoveAt(listBox2.SelectedIndex);
+                if (countries.ContainsKey(listBox1.SelectedValue.ToString()))
+                    countries[listBox1.SelectedValue.ToString()] = selectedCountry;
                 listBox2.DataSource = null;
-                listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
+                listBox2.DataSource = selectedCountry.TradingPartners;
                 partnersCountLbl.Text = listBox2.Items.Count.ToString();
             }
-            */
         }
 
         private void closeBtn_Click(object sender, EventArgs e)

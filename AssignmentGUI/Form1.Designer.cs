@@ -51,6 +51,10 @@
             this.addBtn = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.countriesBox = new System.Windows.Forms.GroupBox();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.searchLbl = new System.Windows.Forms.Label();
+            this.noResultLbl = new System.Windows.Forms.Label();
+            this.resultsLbl = new System.Windows.Forms.Label();
             this.propertiesBox.SuspendLayout();
             this.tradingPartnersBox.SuspendLayout();
             this.countriesBox.SuspendLayout();
@@ -170,7 +174,7 @@
             this.propertiesBox.Controls.Add(this.inflationBox);
             this.propertiesBox.Controls.Add(this.gdpBox);
             this.propertiesBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.propertiesBox.Location = new System.Drawing.Point(256, 6);
+            this.propertiesBox.Location = new System.Drawing.Point(252, 44);
             this.propertiesBox.Name = "propertiesBox";
             this.propertiesBox.Size = new System.Drawing.Size(149, 191);
             this.propertiesBox.TabIndex = 23;
@@ -184,7 +188,7 @@
             this.tradingPartnersBox.Controls.Add(this.tradePRemBtn);
             this.tradingPartnersBox.Controls.Add(this.listBox2);
             this.tradingPartnersBox.Controls.Add(this.tradePAddBtn);
-            this.tradingPartnersBox.Location = new System.Drawing.Point(132, 6);
+            this.tradingPartnersBox.Location = new System.Drawing.Point(128, 44);
             this.tradingPartnersBox.Name = "tradingPartnersBox";
             this.tradingPartnersBox.Size = new System.Drawing.Size(118, 270);
             this.tradingPartnersBox.TabIndex = 24;
@@ -211,7 +215,7 @@
             // 
             // closeBtn
             // 
-            this.closeBtn.Location = new System.Drawing.Point(281, 217);
+            this.closeBtn.Location = new System.Drawing.Point(277, 255);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(90, 40);
             this.closeBtn.TabIndex = 25;
@@ -260,7 +264,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 19);
+            this.listBox1.Location = new System.Drawing.Point(7, 18);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(106, 173);
             this.listBox1.TabIndex = 0;
@@ -273,18 +277,61 @@
             this.countriesBox.Controls.Add(this.countriesCountLbl);
             this.countriesBox.Controls.Add(this.countriesCountTxtLbl);
             this.countriesBox.Controls.Add(this.removeBtn);
-            this.countriesBox.Location = new System.Drawing.Point(7, 6);
+            this.countriesBox.Location = new System.Drawing.Point(3, 44);
             this.countriesBox.Name = "countriesBox";
             this.countriesBox.Size = new System.Drawing.Size(119, 270);
             this.countriesBox.TabIndex = 22;
             this.countriesBox.TabStop = false;
             this.countriesBox.Text = "Countries";
             // 
+            // searchBox
+            // 
+            this.searchBox.Location = new System.Drawing.Point(58, 12);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(100, 20);
+            this.searchBox.TabIndex = 26;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            // 
+            // searchLbl
+            // 
+            this.searchLbl.AutoSize = true;
+            this.searchLbl.Location = new System.Drawing.Point(7, 15);
+            this.searchLbl.Name = "searchLbl";
+            this.searchLbl.Size = new System.Drawing.Size(44, 13);
+            this.searchLbl.TabIndex = 27;
+            this.searchLbl.Text = "Search:";
+            // 
+            // noResultLbl
+            // 
+            this.noResultLbl.AutoSize = true;
+            this.noResultLbl.ForeColor = System.Drawing.Color.Red;
+            this.noResultLbl.Location = new System.Drawing.Point(173, 15);
+            this.noResultLbl.Name = "noResultLbl";
+            this.noResultLbl.Size = new System.Drawing.Size(97, 13);
+            this.noResultLbl.TabIndex = 28;
+            this.noResultLbl.Text = "No matches found!";
+            this.noResultLbl.Visible = false;
+            // 
+            // resultsLbl
+            // 
+            this.resultsLbl.AutoSize = true;
+            this.resultsLbl.ForeColor = System.Drawing.Color.Black;
+            this.resultsLbl.Location = new System.Drawing.Point(173, 15);
+            this.resultsLbl.Name = "resultsLbl";
+            this.resultsLbl.Size = new System.Drawing.Size(97, 13);
+            this.resultsLbl.TabIndex = 29;
+            this.resultsLbl.Text = "No matches found!";
+            this.resultsLbl.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 282);
+            this.ClientSize = new System.Drawing.Size(410, 326);
+            this.Controls.Add(this.resultsLbl);
+            this.Controls.Add(this.noResultLbl);
+            this.Controls.Add(this.searchLbl);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.tradingPartnersBox);
             this.Controls.Add(this.propertiesBox);
@@ -298,6 +345,7 @@
             this.countriesBox.ResumeLayout(false);
             this.countriesBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -326,6 +374,10 @@
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox countriesBox;
+        private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.Label searchLbl;
+        private System.Windows.Forms.Label noResultLbl;
+        private System.Windows.Forms.Label resultsLbl;
 
     }
 }

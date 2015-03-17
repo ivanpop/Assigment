@@ -27,5 +27,14 @@ namespace AssignmentGUI
             Program.newPartnerName = newTradingPartnerBox.Text;
             this.Close();
         }
+
+        private void newTradingPartnerBox_TextChanged(object sender, EventArgs e)
+        {
+            if (newTradingPartnerBox.Text.Length == 1)
+            {
+                newTradingPartnerBox.Text = newTradingPartnerBox.Text.ToString().ToUpper();
+                newTradingPartnerBox.Select(newTradingPartnerBox.Text.Length, 0);
+            }
+        }
     }
 }

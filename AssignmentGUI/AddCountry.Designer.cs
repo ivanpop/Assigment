@@ -49,6 +49,7 @@
             this.newCountryBox.Name = "newCountryBox";
             this.newCountryBox.Size = new System.Drawing.Size(92, 20);
             this.newCountryBox.TabIndex = 1;
+            this.newCountryBox.TextChanged += new System.EventHandler(this.newCountryBox_TextChanged);
             // 
             // cancelBtn
             // 

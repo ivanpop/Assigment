@@ -59,16 +59,6 @@ namespace AssignmentGUI
         {
             refreshListBox1();
             updateView();
-            
-            /*
-            List<Countries> sortedList = countries.OrderBy(x => x.Name).ToList();
-            countries = new BindingList<Countries>(sortedList);
-
-            listBox1.DataSource = countries;
-            listBox1.DisplayMember = "Name";
-            countriesCountLbl.Text = listBox1.Items.Count.ToString();
-            partnersCountLbl.Text = listBox2.Items.Count.ToString();
-            */
         }
 
         private void removeBtn_Click(object sender, EventArgs e)
@@ -117,8 +107,10 @@ namespace AssignmentGUI
 
         void acClosed(object sender, FormClosedEventArgs e)
         {
-            if(Program.newCountryName != "")
+            if (Program.newCountryName != null)
             {
+                Program.newCountryName = Program.newCountryName.First().ToString().ToUpper() + String.Join("", Program.newCountryName.Skip(1));
+
                 countries.Add(Program.newCountryName, new Countries
                 {
                     GdpGrowth = 0,
@@ -170,6 +162,40 @@ namespace AssignmentGUI
         private void closeBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            if (searchBox.Text != "")
+            {
+                if (searchBox.Text.Length == 1)
+                {
+                    searchBox.Text = searchBox.Text.ToString().ToUpper();
+                    searchBox.Select(searchBox.Text.Length, 0);
+                }
+                var filtered = countries.Where(d => d.Key.Contains(searchBox.Text)).ToDictionary(d => d.Key, d => d.Value);
+
+                if (filtered.Count > 0)
+                {
+                    listBox1.DataSource = new BindingSource(filtered, null);
+                    listBox1.ValueMember = "Key";
+                    noResultLbl.Visible = false;
+                    resultsLbl.Visible = true;
+
+                    if (filtered.Count == 1) resultsLbl.Text = filtered.Count + " match";
+                    else resultsLbl.Text = filtered.Count + " matches";
+                }
+                else
+                {
+                    noResultLbl.Visible = true;
+                    resultsLbl.Visible = false;
+                }
+            }
+            else
+            {
+                refreshListBox1();
+                resultsLbl.Visible = false;
+            }
         }
     }
 }

@@ -27,5 +27,14 @@ namespace AssignmentGUI
             Program.newCountryName = newCountryBox.Text;
             this.Close();
         }
+
+        private void newCountryBox_TextChanged(object sender, EventArgs e)
+        {
+            if (newCountryBox.Text.Length == 1)
+            {
+                newCountryBox.Text = newCountryBox.Text.ToString().ToUpper();
+                newCountryBox.Select(newCountryBox.Text.Length, 0);
+            }
+        }
     }
 }

@@ -49,6 +49,7 @@
             this.newTradingPartnerBox.Name = "newTradingPartnerBox";
             this.newTradingPartnerBox.Size = new System.Drawing.Size(92, 20);
             this.newTradingPartnerBox.TabIndex = 2;
+            this.newTradingPartnerBox.TextChanged += new System.EventHandler(this.newTradingPartnerBox_TextChanged);
             // 
             // okBtn
             // 

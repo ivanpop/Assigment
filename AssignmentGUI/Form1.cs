@@ -49,11 +49,15 @@ namespace AssignmentGUI
             bindListbox1();
         }
 
-        private void bindListbox1()
+        private void refreshListBox1()
         {
             listBox1.DataSource = new BindingSource(countries, null);
             listBox1.ValueMember = "Key";
-            countriesCountLbl.Text = countries.Count.ToString();
+        }
+
+        private void bindListbox1()
+        {
+            refreshListBox1();
             updateView();
             
             /*
@@ -69,10 +73,9 @@ namespace AssignmentGUI
 
         private void removeBtn_Click(object sender, EventArgs e)
         {
-            /*
-            countries.RemoveAt(listBox1.SelectedIndex);
+            countries.Remove(listBox1.SelectedValue.ToString());
+            refreshListBox1();
             updateView();
-            */
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,13 +88,15 @@ namespace AssignmentGUI
             if (countries.ContainsKey(listBox1.SelectedValue.ToString()))
             {
                 selectedCountry = countries[listBox1.SelectedValue.ToString()];
-                listBox2.DataSource = selectedCountry.TradingPartners;
-                partnersCountLbl.Text = listBox2.Items.Count.ToString();
-                gdpBox.Text = selectedCountry.GdpGrowth.ToString();
-                inflationBox.Text = selectedCountry.Inflation.ToString();
-                tradeBalanceBox.Text = selectedCountry.TradeBalance.ToString();
-                hdiBox.Text = selectedCountry.HdiRank.ToString();
-            } 
+            }
+
+            listBox2.DataSource = selectedCountry.TradingPartners;
+            partnersCountLbl.Text = listBox2.Items.Count.ToString();
+            gdpBox.Text = selectedCountry.GdpGrowth.ToString();
+            inflationBox.Text = selectedCountry.Inflation.ToString();
+            tradeBalanceBox.Text = selectedCountry.TradeBalance.ToString();
+            hdiBox.Text = selectedCountry.HdiRank.ToString();
+            countriesCountLbl.Text = countries.Count.ToString();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)

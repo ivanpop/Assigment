@@ -3,18 +3,11 @@ using System.ComponentModel;
 using System.Text;
 class Countries
 {
-    private string name;
     private double gdpGrowth;
     private double inflation;
     private double tradeBalance;
     private int hdiRank;
     private List<string> tradingPartners = new List<string>();
-
-    public string Name
-    {
-        get { return name; }
-        set { name = value; }
-    }
 
     public double GdpGrowth
     {

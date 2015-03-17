@@ -15,9 +15,7 @@ namespace AssignmentGUI
     public partial class Form1 : Form
     {
         static string[] headers = new string[6];
-        //BindingList<Countries> countries = new BindingList<Countries>();
-        int key = 0;
-        Dictionary<Countries, int> countries = new Dictionary<Countries, int>();
+        SortedDictionary<string, Countries> countries = new SortedDictionary<string, Countries>();
 
         public Form1()
         {
@@ -37,16 +35,14 @@ namespace AssignmentGUI
                 else
                 {
                     string[] columns = line.Split(',');
-                    countries.Add(new Countries
+                    countries.Add(columns[0], new Countries
                     {
-                        Name = columns[0],
                         GdpGrowth = Convert.ToDouble(columns[1]),
                         Inflation = Convert.ToDouble(columns[2]),
                         TradeBalance = Convert.ToDouble(columns[3]),
                         HdiRank = Int32.Parse(columns[4]),
                         TradePartners = columns[5]
-                    }, key);
-                    key++;
+                    });
                 }
             }
             bindListbox1();
@@ -54,11 +50,8 @@ namespace AssignmentGUI
 
         private void bindListbox1()
         {
-            //var sortedDict = from entry in countries orderby entry.Value ascending select entry;
-            //countries = sortedDict.ToDictionary(pair => pair.Key, pair => pair.Value);
-
-            //listBox1.DataSource = new BindingSource(countries, null);
-            //listBox1.ValueMember = countries[key];
+            listBox1.DataSource = new BindingSource(countries, null);
+            listBox1.ValueMember = "Key";
             
             /*
             List<Countries> sortedList = countries.OrderBy(x => x.Name).ToList();

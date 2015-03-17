@@ -56,14 +56,19 @@
             this.noResultLbl = new System.Windows.Forms.Label();
             this.resultsLbl = new System.Windows.Forms.Label();
             this.tpSearchGrp = new System.Windows.Forms.GroupBox();
+            this.tpResultBox = new System.Windows.Forms.ListBox();
             this.tpSearchLbl = new System.Windows.Forms.Label();
             this.tpSearch = new System.Windows.Forms.Button();
             this.tpSearchBox = new System.Windows.Forms.TextBox();
-            this.tpResultBox = new System.Windows.Forms.ListBox();
+            this.potTradeLbl = new System.Windows.Forms.Label();
+            this.potentialResLbl = new System.Windows.Forms.Label();
+            this.potentialBox = new System.Windows.Forms.GroupBox();
+            this.refreshPotential = new System.Windows.Forms.Button();
             this.propertiesBox.SuspendLayout();
             this.tradingPartnersBox.SuspendLayout();
             this.countriesBox.SuspendLayout();
             this.tpSearchGrp.SuspendLayout();
+            this.potentialBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // gdpLbl
@@ -180,9 +185,9 @@
             this.propertiesBox.Controls.Add(this.inflationBox);
             this.propertiesBox.Controls.Add(this.gdpBox);
             this.propertiesBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.propertiesBox.Location = new System.Drawing.Point(254, 71);
+            this.propertiesBox.Location = new System.Drawing.Point(254, 109);
             this.propertiesBox.Name = "propertiesBox";
-            this.propertiesBox.Size = new System.Drawing.Size(149, 191);
+            this.propertiesBox.Size = new System.Drawing.Size(149, 186);
             this.propertiesBox.TabIndex = 23;
             this.propertiesBox.TabStop = false;
             this.propertiesBox.Text = "Properties";
@@ -221,9 +226,9 @@
             // 
             // closeBtn
             // 
-            this.closeBtn.Location = new System.Drawing.Point(279, 282);
+            this.closeBtn.Location = new System.Drawing.Point(320, 301);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(90, 40);
+            this.closeBtn.Size = new System.Drawing.Size(183, 33);
             this.closeBtn.TabIndex = 25;
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = true;
@@ -292,7 +297,7 @@
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(60, 29);
+            this.searchBox.Location = new System.Drawing.Point(60, 22);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(100, 20);
             this.searchBox.TabIndex = 26;
@@ -301,7 +306,7 @@
             // searchLbl
             // 
             this.searchLbl.AutoSize = true;
-            this.searchLbl.Location = new System.Drawing.Point(9, 32);
+            this.searchLbl.Location = new System.Drawing.Point(9, 25);
             this.searchLbl.Name = "searchLbl";
             this.searchLbl.Size = new System.Drawing.Size(44, 13);
             this.searchLbl.TabIndex = 27;
@@ -311,7 +316,7 @@
             // 
             this.noResultLbl.AutoSize = true;
             this.noResultLbl.ForeColor = System.Drawing.Color.Red;
-            this.noResultLbl.Location = new System.Drawing.Point(175, 32);
+            this.noResultLbl.Location = new System.Drawing.Point(175, 25);
             this.noResultLbl.Name = "noResultLbl";
             this.noResultLbl.Size = new System.Drawing.Size(97, 13);
             this.noResultLbl.TabIndex = 28;
@@ -322,7 +327,7 @@
             // 
             this.resultsLbl.AutoSize = true;
             this.resultsLbl.ForeColor = System.Drawing.Color.Black;
-            this.resultsLbl.Location = new System.Drawing.Point(175, 32);
+            this.resultsLbl.Location = new System.Drawing.Point(175, 25);
             this.resultsLbl.Name = "resultsLbl";
             this.resultsLbl.Size = new System.Drawing.Size(97, 13);
             this.resultsLbl.TabIndex = 29;
@@ -336,12 +341,20 @@
             this.tpSearchGrp.Controls.Add(this.tpSearch);
             this.tpSearchGrp.Controls.Add(this.tpSearchBox);
             this.tpSearchGrp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tpSearchGrp.Location = new System.Drawing.Point(409, 72);
+            this.tpSearchGrp.Location = new System.Drawing.Point(409, 110);
             this.tpSearchGrp.Name = "tpSearchGrp";
-            this.tpSearchGrp.Size = new System.Drawing.Size(147, 191);
+            this.tpSearchGrp.Size = new System.Drawing.Size(147, 185);
             this.tpSearchGrp.TabIndex = 30;
             this.tpSearchGrp.TabStop = false;
             this.tpSearchGrp.Text = "Search by trading partners";
+            // 
+            // tpResultBox
+            // 
+            this.tpResultBox.FormattingEnabled = true;
+            this.tpResultBox.Location = new System.Drawing.Point(21, 103);
+            this.tpResultBox.Name = "tpResultBox";
+            this.tpResultBox.Size = new System.Drawing.Size(103, 69);
+            this.tpResultBox.TabIndex = 31;
             // 
             // tpSearchLbl
             // 
@@ -370,19 +383,53 @@
             this.tpSearchBox.TabIndex = 12;
             this.tpSearchBox.TextChanged += new System.EventHandler(this.tpSearchBox_TextChanged);
             // 
-            // tpResultBox
+            // potTradeLbl
             // 
-            this.tpResultBox.FormattingEnabled = true;
-            this.tpResultBox.Location = new System.Drawing.Point(21, 103);
-            this.tpResultBox.Name = "tpResultBox";
-            this.tpResultBox.Size = new System.Drawing.Size(103, 82);
-            this.tpResultBox.TabIndex = 31;
+            this.potTradeLbl.AutoSize = true;
+            this.potTradeLbl.Location = new System.Drawing.Point(6, 27);
+            this.potTradeLbl.Name = "potTradeLbl";
+            this.potTradeLbl.Size = new System.Drawing.Size(133, 13);
+            this.potTradeLbl.TabIndex = 31;
+            this.potTradeLbl.Text = "Biggest potential for trade: ";
+            // 
+            // potentialResLbl
+            // 
+            this.potentialResLbl.AutoSize = true;
+            this.potentialResLbl.Location = new System.Drawing.Point(148, 27);
+            this.potentialResLbl.Name = "potentialResLbl";
+            this.potentialResLbl.Size = new System.Drawing.Size(35, 13);
+            this.potentialResLbl.TabIndex = 32;
+            this.potentialResLbl.Text = "label1";
+            // 
+            // potentialBox
+            // 
+            this.potentialBox.Controls.Add(this.refreshPotential);
+            this.potentialBox.Controls.Add(this.potentialResLbl);
+            this.potentialBox.Controls.Add(this.potTradeLbl);
+            this.potentialBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.potentialBox.Location = new System.Drawing.Point(320, 12);
+            this.potentialBox.Name = "potentialBox";
+            this.potentialBox.Size = new System.Drawing.Size(202, 91);
+            this.potentialBox.TabIndex = 24;
+            this.potentialBox.TabStop = false;
+            this.potentialBox.Text = "Potential for trade";
+            // 
+            // refreshPotential
+            // 
+            this.refreshPotential.Location = new System.Drawing.Point(64, 59);
+            this.refreshPotential.Name = "refreshPotential";
+            this.refreshPotential.Size = new System.Drawing.Size(75, 23);
+            this.refreshPotential.TabIndex = 33;
+            this.refreshPotential.Text = "Refresh";
+            this.refreshPotential.UseVisualStyleBackColor = true;
+            this.refreshPotential.Click += new System.EventHandler(this.refreshPotential_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 353);
+            this.Controls.Add(this.potentialBox);
             this.Controls.Add(this.tpSearchGrp);
             this.Controls.Add(this.resultsLbl);
             this.Controls.Add(this.noResultLbl);
@@ -402,6 +449,8 @@
             this.countriesBox.PerformLayout();
             this.tpSearchGrp.ResumeLayout(false);
             this.tpSearchGrp.PerformLayout();
+            this.potentialBox.ResumeLayout(false);
+            this.potentialBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,6 +490,10 @@
         private System.Windows.Forms.Button tpSearch;
         private System.Windows.Forms.TextBox tpSearchBox;
         private System.Windows.Forms.ListBox tpResultBox;
+        private System.Windows.Forms.Label potTradeLbl;
+        private System.Windows.Forms.Label potentialResLbl;
+        private System.Windows.Forms.GroupBox potentialBox;
+        private System.Windows.Forms.Button refreshPotential;
 
     }
 }

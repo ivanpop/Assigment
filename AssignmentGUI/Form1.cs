@@ -38,6 +38,7 @@ namespace AssignmentGUI
                 }
             }
             bindListbox1();
+            //findTradePotential();
         }
 
         private void refreshListBox1()
@@ -215,6 +216,37 @@ namespace AssignmentGUI
                 tpSearchBox.Text = tpSearchBox.Text.ToString().ToUpper();
                 tpSearchBox.Select(tpSearchBox.Text.Length, 0);
             }
-        }      
+        }
+
+        private void findTradePotential()
+        {
+            double bestPotential = 0, tempPotential = 0;
+            string bestCountry = "";
+            Countries tempCountry = new Countries();            
+
+            foreach(var entry1 in countries)
+            {
+                foreach(var entry2 in entry1.Value.TradingPartners)
+                {   
+                    if(countries.ContainsKey(entry2))
+                    tempCountry = countries[entry2];
+
+                    tempPotential += tempCountry.GdpGrowth;
+                    if (tempPotential > bestPotential)
+                    {
+                        bestPotential = tempPotential;
+                        bestCountry = entry1.Key;
+                    }
+                }
+                tempPotential = 0;
+            }
+
+            potentialResLbl.Text = bestCountry;
+        }
+
+        private void refreshPotential_Click(object sender, EventArgs e)
+        {
+            findTradePotential();
+        }
     }
 }

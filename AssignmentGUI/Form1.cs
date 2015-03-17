@@ -112,21 +112,18 @@ namespace AssignmentGUI
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            /*
             AddCountry ac = new AddCountry();
             ac.FormClosed += new FormClosedEventHandler(acClosed);
             ac.Show();
-            */
         }
 
         void acClosed(object sender, FormClosedEventArgs e)
         {
-            /*
+            
             if(Program.newCountryName != "")
             {
-                countries.Add(new Countries
+                countries.Add(Program.newCountryName, new Countries
                 {
-                    Name = Program.newCountryName,
                     GdpGrowth = 0,
                     Inflation = 0,
                     TradeBalance = 0,
@@ -135,9 +132,8 @@ namespace AssignmentGUI
                 });
 
                 Program.newCountryName = null;
-                resortListbox1();
+                refreshListBox1();
             }
-            */
         }
 
         private void tradePAddBtn_Click(object sender, EventArgs e)

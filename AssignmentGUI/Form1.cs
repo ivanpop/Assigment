@@ -16,6 +16,7 @@ namespace AssignmentGUI
     {
         static string[] headers = new string[6];
         SortedDictionary<string, Countries> countries = new SortedDictionary<string, Countries>();
+        Countries selectedCountry = new Countries();
 
         public Form1()
         {
@@ -52,6 +53,8 @@ namespace AssignmentGUI
         {
             listBox1.DataSource = new BindingSource(countries, null);
             listBox1.ValueMember = "Key";
+            countriesCountLbl.Text = countries.Count.ToString();
+            updateView();
             
             /*
             List<Countries> sortedList = countries.OrderBy(x => x.Name).ToList();
@@ -74,32 +77,32 @@ namespace AssignmentGUI
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
             updateView();
-             */
         }
 
         private void updateView()
         {
-            /*
-            gdpBox.Text = countries[listBox1.SelectedIndex].GdpGrowth.ToString();
-            inflationBox.Text = countries[listBox1.SelectedIndex].Inflation.ToString();
-            tradeBalanceBox.Text = countries[listBox1.SelectedIndex].TradeBalance.ToString();
-            hdiBox.Text = countries[listBox1.SelectedIndex].HdiRank.ToString();
-            listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
-            countriesCountLbl.Text = listBox1.Items.Count.ToString();
-            partnersCountLbl.Text = listBox2.Items.Count.ToString();
-             */
+            if (countries.ContainsKey(listBox1.SelectedValue.ToString()))
+            {
+                selectedCountry = countries[listBox1.SelectedValue.ToString()];
+                listBox2.DataSource = selectedCountry.TradingPartners;
+                partnersCountLbl.Text = listBox2.Items.Count.ToString();
+                gdpBox.Text = selectedCountry.GdpGrowth.ToString();
+                inflationBox.Text = selectedCountry.Inflation.ToString();
+                tradeBalanceBox.Text = selectedCountry.TradeBalance.ToString();
+                hdiBox.Text = selectedCountry.HdiRank.ToString();
+            } 
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            /*
-            countries[listBox1.SelectedIndex].GdpGrowth = Convert.ToDouble(gdpBox.Text);
-            countries[listBox1.SelectedIndex].Inflation = Convert.ToDouble(inflationBox.Text);
-            countries[listBox1.SelectedIndex].TradeBalance = Convert.ToDouble(tradeBalanceBox.Text);
-            countries[listBox1.SelectedIndex].HdiRank = Convert.ToInt32(hdiBox.Text);
-            */
+            selectedCountry.GdpGrowth = Convert.ToDouble(gdpBox.Text);
+            selectedCountry.Inflation = Convert.ToDouble(inflationBox.Text);
+            selectedCountry.TradeBalance = Convert.ToDouble(tradeBalanceBox.Text);
+            selectedCountry.HdiRank = Convert.ToInt32(hdiBox.Text);
+
+            if (countries.ContainsKey(listBox1.SelectedValue.ToString()))
+                countries[listBox1.SelectedValue.ToString()] = selectedCountry;
         }
 
         private void addBtn_Click(object sender, EventArgs e)

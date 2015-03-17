@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AssignmentGUI
@@ -24,15 +19,11 @@ namespace AssignmentGUI
 
             const int MAX_LINES_FILE = 50000;
             string[] AllLines = new string[MAX_LINES_FILE];
-
             AllLines = File.ReadAllLines("countries.csv");
 
             foreach (string line in AllLines)
             {
-                if (line.StartsWith("Country"))
-                {
-                    headers = line.Split(',');
-                }
+                if (line.StartsWith("Country")) headers = line.Split(',');
                 else
                 {
                     string[] columns = line.Split(',');
@@ -68,12 +59,7 @@ namespace AssignmentGUI
             updateView();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            updateView();
-        }
-
-        private void updateView()
+        private void updateView(object sender, EventArgs e)
         {
             if (countries.ContainsKey(listBox1.SelectedValue.ToString()))
                 selectedCountry = countries[listBox1.SelectedValue.ToString()];
@@ -138,8 +124,10 @@ namespace AssignmentGUI
             {
                 selectedCountry.TradingPartners.Add(Program.newPartnerName);
                 Program.newPartnerName = null;
+
                 if (countries.ContainsKey(listBox1.SelectedValue.ToString()))
                     countries[listBox1.SelectedValue.ToString()] = selectedCountry;
+
                 listBox2.DataSource = null;
                 listBox2.DataSource = selectedCountry.TradingPartners;
                 partnersCountLbl.Text = listBox2.Items.Count.ToString();
@@ -151,8 +139,10 @@ namespace AssignmentGUI
             if(listBox2.SelectedIndex != -1)
             {
                 selectedCountry.TradingPartners.RemoveAt(listBox2.SelectedIndex);
+
                 if (countries.ContainsKey(listBox1.SelectedValue.ToString()))
                     countries[listBox1.SelectedValue.ToString()] = selectedCountry;
+
                 listBox2.DataSource = null;
                 listBox2.DataSource = selectedCountry.TradingPartners;
                 partnersCountLbl.Text = listBox2.Items.Count.ToString();
@@ -173,6 +163,7 @@ namespace AssignmentGUI
                     searchBox.Text = searchBox.Text.ToString().ToUpper();
                     searchBox.Select(searchBox.Text.Length, 0);
                 }
+
                 var filtered = countries.Where(d => d.Key.Contains(searchBox.Text)).ToDictionary(d => d.Key, d => d.Value);
 
                 if (filtered.Count > 0)
@@ -194,8 +185,36 @@ namespace AssignmentGUI
             else
             {
                 refreshListBox1();
-                resultsLbl.Visible = false;
+                resultsLbl.Visible = noResultLbl.Visible = false;                
             }
         }
+
+        private void updateView()
+        {
+
+        }
+
+        private void tpSearch_Click(object sender, EventArgs e)
+        {
+            string s = tpSearchBox.Text;
+            BindingList<String> results = new BindingList<string>();
+
+            foreach (var entry in countries)
+                if (entry.Value.TradingPartners.Contains(s))
+                    results.Add(entry.Key);
+
+            if (results.Count == 0) results.Add("No matches");            
+
+            tpResultBox.DataSource = results;
+        }
+
+        private void tpSearchBox_TextChanged(object sender, EventArgs e)
+        {
+            if (tpSearchBox.Text.Length == 1)
+            {
+                tpSearchBox.Text = tpSearchBox.Text.ToString().ToUpper();
+                tpSearchBox.Select(tpSearchBox.Text.Length, 0);
+            }
+        }      
     }
 }

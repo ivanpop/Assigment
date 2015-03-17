@@ -86,9 +86,7 @@ namespace AssignmentGUI
         private void updateView()
         {
             if (countries.ContainsKey(listBox1.SelectedValue.ToString()))
-            {
                 selectedCountry = countries[listBox1.SelectedValue.ToString()];
-            }
 
             listBox2.DataSource = selectedCountry.TradingPartners;
             partnersCountLbl.Text = listBox2.Items.Count.ToString();
@@ -138,25 +136,21 @@ namespace AssignmentGUI
 
         private void tradePAddBtn_Click(object sender, EventArgs e)
         {
-            /*
             AddTradingPartner ap = new AddTradingPartner();
             ap.FormClosed += new FormClosedEventHandler(apClosed);
             ap.Show();
-            */
         }
 
         void apClosed(object sender, FormClosedEventArgs e)
         {
-            /*
             if(Program.newPartnerName != "" && Program.newPartnerName != null)
             {
-                countries[listBox1.SelectedIndex].TradingPartners.Add(Program.newPartnerName);
+                selectedCountry.TradingPartners.Add(Program.newPartnerName);
                 Program.newPartnerName = null;
                 listBox2.DataSource = null;
-                listBox2.DataSource = countries[listBox1.SelectedIndex].TradingPartners;
+                listBox2.DataSource = selectedCountry.TradingPartners;
                 partnersCountLbl.Text = listBox2.Items.Count.ToString();
             }
-            */ 
         }
 
         private void tradePRemBtn_Click(object sender, EventArgs e)

@@ -409,7 +409,7 @@
             this.potentialBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.potentialBox.Location = new System.Drawing.Point(320, 12);
             this.potentialBox.Name = "potentialBox";
-            this.potentialBox.Size = new System.Drawing.Size(202, 91);
+            this.potentialBox.Size = new System.Drawing.Size(236, 91);
             this.potentialBox.TabIndex = 24;
             this.potentialBox.TabStop = false;
             this.potentialBox.Text = "Potential for trade";
